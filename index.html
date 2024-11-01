@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be Mine?</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f3ec78, #af4261);
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #dc4242;
+            overflow: hidden;
+            transition: background 3s ease-in-out;
+        }
+
+        /* Container and Text Styles */
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10%);
+            animation: float 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes float {
+            to {
+                transform: translateY(-15%);
+            }
+        }
+
+        h1, h2 {
+            color: #ff6b6b;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        .buttons a {
+            text-decoration: none;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 25px;
+            margin: 0 10px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .yes { background-color: #4caf50; }
+        .no { background-color: #de3d3d; }
+
+        .yes:hover { background-color: #45a049; transform: scale(1.05); }
+        .no:hover { background-color: #f44336; transform: scale(1.05); }
+
+        footer { font-size: 0.9em; color: #000; }
+
+        /* Dancing Couple Section */
+        .dancing-couple { display: none; text-align: center; }
+
+        .dancing-couple iframe { width: 100%; height: 600px; }
+
+        /* Background Animation Keyframes */
+        @keyframes romanticBackgroundPulse {
+            0% { background: linear-gradient(135deg, #ea9191, #fd1859); }
+            25% { background: linear-gradient(135deg, #e78e8e, #e8053a); }
+            50% { background: linear-gradient(135deg, #ed2cc0, #e9acd5); }
+            75% { background: linear-gradient(135deg, #be2adb, #c98acb); }
+            100% { background: linear-gradient(135deg, #fab6b6, #ff034a); }
+        }
+
+        .background-animate { 
+            animation: romanticBackgroundPulse 10s ease-in-out infinite; 
+        }
+
+        /* Floating Hearts Animation */
+        .heart {
+            position: absolute;
+            width: 30px; /* Increased heart size by 50% */
+            height: 30px;
+            animation: floatHeart 5s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 0.3;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-250px) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive styles */
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            p { font-size: 1em; }
+            .buttons a { padding: 10px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <svg class="heart" style="left: 10%; animation-delay: 0s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 105, 180, 0.8)">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <!-- Additional hearts with varied positions and delays -->
+    <svg class="heart" style="left: 30%; animation-delay: 1s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 105, 180, 0.8)">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <svg class="heart" style="left: 50%; animation-delay: 2s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 105, 180, 0.8)">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <svg class="heart" style="left: 70%; animation-delay: 3s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 105, 180, 0.8)">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+    <svg class="heart" style="left: 90%; animation-delay: 4s;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 105, 180, 0.8)">
+        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+
+    <div class="container" id="proposal-container">
+        <h1>Hey V</h1>
+        <p> 💖</p>
+        <h2>Will you be my betterhalf?</h2>
+        <div class="buttons">
+            <a href="#" class="yes" onclick="handleYes()">Yes! ❤️</a>
+            <a href="#" class="no" id="no-button" onclick="handleNo()">No 😢</a>
+        </div>
+        <footer><p>Made with love by your ARPAN </p></footer>
+    </div>
+
+    <!-- Dancing Couple Section (remains same) -->
+    <div class="dancing-couple" id="dancing-couple">
+        <h2>Yay! You said yes! 🥳</h2>
+        <iframe src="https://sketchfab.com/models/b57bdfa7774140528f42b60c2ce03909/embed" frameborder="0" allowfullscreen mozallowfullscreen webkitallowfullscreen title="us"></iframe>
+        <audio id="background-music" autoplay>
+            <source src="perfect.mp3" type="audio/mpeg"> Your browser does not support the audio element.
+        </audio>
+        <footer><p>TOH AJJ SE AAP MRS AGGARWAL.?!</p></footer>
+    </div>
+
+    <script>
+        let noCount = 0;
+
+        function handleYes() {
+            document.getElementById('proposal-container').style.display = 'none';
+            document.getElementById('dancing-couple').style.display = 'block';
+            document.body.classList.add('background-animate');
+            const audio = document.getElementById('background-music');
+            audio.play();
+            audio.onended = function() {
+                document.getElementById('dancing-couple').classList.add('animate');
+            };
+        }
+
+        function handleNo() {
+            noCount++;
+            const noButton = document.getElementById('no-button');
+            if (noCount === 1) {
+                alert('ITNI ASANI SE NO KAISE KAR SAKTI HAI !');
+            } else if (noCount === 2) {
+                alert('Ek baar aur soch le.');
+            } else if (noCount >= 3) {
+                noButton.classList.add('hidden');
+                alert('Looks like you really want to think it over! 😊');
+            }
+        }
+    </script>
+</body>
+</html>
